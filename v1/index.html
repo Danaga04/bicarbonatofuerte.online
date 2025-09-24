@@ -71,30 +71,35 @@
   </div>
 
 <!-- Contador de visualizações -->
-<div id="viewers" style="color: yellow; font-size: 18px; text-align: center; margin-top: 15px;">
+<div id="viewers" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; text-align: center; margin-top: 10px;">
   0 personas viendo este video en este momento
 </div>
 
 <script>
-  // Configurações do contador
-  const maxViewers = 500; // número máximo
-  const durationSeconds = 20 * 60; // 20 minutos em segundos
+  const maxViewers = 500;               // Máximo de pessoas
+  const durationSeconds = 20 * 60;      // 20 minutos
   const startViewers = Math.floor(Math.random() * 20) + 5; // 5 a 25 pessoas iniciais
   const viewersElement = document.getElementById('viewers');
 
   let currentViewers = startViewers;
-
-  // Calcula incremento por segundo
   const totalIncrease = maxViewers - startViewers;
-  const incrementPerSecond = totalIncrease / durationSeconds;
 
-  // Atualiza o contador a cada segundo
+  // A cada segundo, aumenta um pouco, mas de forma aleatória
   const interval = setInterval(() => {
-    currentViewers += incrementPerSecond;
-    if (currentViewers >= maxViewers) {
+    // Incremento aleatório proporcional ao restante do aumento
+    let remaining = maxViewers - currentViewers;
+    if (remaining <= 0) {
       currentViewers = maxViewers;
-      clearInterval(interval); // Para quando atingir o máximo
+      clearInterval(interval);
+      return;
     }
+
+    // Aleatório entre 0 e (totalIncrease / durationSeconds * 2) para efeito natural
+    let randomIncrement = Math.random() * (totalIncrease / durationSeconds * 2);
+    currentViewers += randomIncrement;
+
+    if (currentViewers > maxViewers) currentViewers = maxViewers;
+
     viewersElement.textContent = `${Math.floor(currentViewers)} personas viendo este video en este momento`;
   }, 1000);
 </script>
@@ -752,6 +757,7 @@ src="https://www.facebook.com/tr?id=1318521726735498&ev=PageView&noscript=1"
   
 </body>
 </html>
+
 
 
 
