@@ -70,15 +70,15 @@
     
   </div>
 
-<!-- Contador de visualizações realista -->
-<div id="viewers" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; text-align: center; margin-top: 10px; position: relative;">
+<!-- Contador de visualizaciones realista con margen -->
+<div id="viewers" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; text-align: center; margin: 20px 0; padding: 10px 0;">
   0 personas viendo este video en este momento
 </div>
 
 <script>
   const maxViewers = 500;                 // Máximo “normal”
   const durationSeconds = 20 * 60;        // 20 minutos
-  const startViewers = Math.floor(Math.random() * 20) + 5; // 5 a 25 pessoas iniciais
+  const startViewers = Math.floor(Math.random() * 20) + 5; // 5 a 25 personas iniciales
   const viewersElement = document.getElementById('viewers');
 
   let currentViewers = startViewers;
@@ -91,28 +91,23 @@
     let increment = 0;
 
     if (secondsElapsed <= durationSeconds) {
-      // Até 20 minutos: tendência a subir, com variações aleatórias
+      // Hasta 20 minutos: tendencia a subir con pequeñas variaciones
       increment = Math.random() * (remainingIncrease / (durationSeconds - secondsElapsed + 1)) * 1.5;
     } else {
-      // Depois de 20 minutos: tendência a cair mais do que aumenta
-      increment = (Math.random() - 0.7) * 2; // 70% chance de cair
+      // Después de 20 minutos: tendencia a caer más que subir
+      increment = (Math.random() - 0.7) * 2; // 70% chance de caer
     }
 
     currentViewers += increment;
 
-    // Limites realistas com pequenas margens
+    // Limites realistas
     if (currentViewers > maxViewers + 30) currentViewers = maxViewers + 30;
     if (currentViewers < 5) currentViewers = 5;
 
     viewersElement.textContent = `${Math.floor(currentViewers)} personas viendo este video en este momento`;
-
-    // Pequena movimentação do texto para parecer “vivo”
-    let offsetX = Math.random() * 4 - 2; // -2 a +2 px
-    let offsetY = Math.random() * 4 - 2; // -2 a +2 px
-    viewersElement.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
   }
 
-  // Atualiza a cada segundo
+  // Actualiza cada segundo
   setInterval(updateViewers, 1000);
 </script>
 
@@ -769,6 +764,7 @@ src="https://www.facebook.com/tr?id=1318521726735498&ev=PageView&noscript=1"
   
 </body>
 </html>
+
 
 
 
