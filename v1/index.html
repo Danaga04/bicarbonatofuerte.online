@@ -70,14 +70,35 @@
     
   </div>
 
-  <div style="display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; background-color: #000;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px; min-width: 16px;">
-      <path d="M3 10v4h4l5 5V5l-5 5H3zm13.5 2c0-1.77-.77-3.37-2-4.47v8.94c1.23-1.1 2-2.7 2-4.47zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.39 7-8.77s-2.99-7.86-7-8.77z"/>
-    </svg>
-    <span style="color: white; font-family: Arial, sans-serif; font-size: 14px;">
-      Quédate hasta el final para <strong style="color: white;">perder hasta 10 kilos</strong>
-    </span>
-  </div>
+<!-- Contador de visualizações -->
+<div id="viewers" style="color: yellow; font-size: 18px; text-align: center; margin-top: 15px;">
+  0 personas viendo este video en este momento
+</div>
+
+<script>
+  // Configurações do contador
+  const maxViewers = 500; // número máximo
+  const durationSeconds = 20 * 60; // 20 minutos em segundos
+  const startViewers = Math.floor(Math.random() * 20) + 5; // 5 a 25 pessoas iniciais
+  const viewersElement = document.getElementById('viewers');
+
+  let currentViewers = startViewers;
+
+  // Calcula incremento por segundo
+  const totalIncrease = maxViewers - startViewers;
+  const incrementPerSecond = totalIncrease / durationSeconds;
+
+  // Atualiza o contador a cada segundo
+  const interval = setInterval(() => {
+    currentViewers += incrementPerSecond;
+    if (currentViewers >= maxViewers) {
+      currentViewers = maxViewers;
+      clearInterval(interval); // Para quando atingir o máximo
+    }
+    viewersElement.textContent = `${Math.floor(currentViewers)} personas viendo este video en este momento`;
+  }, 1000);
+</script>
+
 
 <div class="esconder">
 
@@ -731,5 +752,6 @@ src="https://www.facebook.com/tr?id=1318521726735498&ev=PageView&noscript=1"
   
 </body>
 </html>
+
 
 
