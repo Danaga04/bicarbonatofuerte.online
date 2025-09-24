@@ -70,44 +70,36 @@
     
   </div>
 
-<!-- Contador de visualizaciones realista tipo "ao vivo" -->
-<div id="viewers" style="color: white; font-family: 'Poppins', sans-serif; font-size: 14px; text-align: center; margin: 20px 30px; padding: 10px 0;">
-  0 personas viendo este video en este momento
-</div>
-
 <script>
-  const maxViewers = 500;
-  const viewersElement = document.getElementById('viewers');
+        // Função para atualizar o número de pessoas assistindo
+        function atualizarContador(numero) {
+            document.getElementById("contador").innerText = numero + " pessoas assistindo";
+        }
 
-  let currentViewers = Math.floor(Math.random() * 10) + 5; // início lento: 5-15 pessoas
-  let secondsElapsed = 0;
+        // Função para gerar um número aleatório entre min e max
+        function numeroAleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
 
-  function updateViewers() {
-    secondsElapsed++;
-
-    let increment = 0;
-
-    // Subida lenta no início (primeiros 2 minutos)
-    if (secondsElapsed <= 120) {
-      increment = Math.random() * 0.5; // subindo devagar
-    } 
-    // Subida rápida depois (até chegar no máximo)
-    else if (currentViewers < maxViewers) {
-      increment = Math.random() * 2 + 1; // entra um monte de gente
-    }
-
-    currentViewers += increment;
-
-    // Limites realistas
-    if (currentViewers > maxViewers) currentViewers = maxViewers;
-
-    viewersElement.textContent = `${Math.floor(currentViewers)} personas viendo este video en este momento`;
-  }
-
-  // Atualiza a cada segundo
-  setInterval(updateViewers, 1000);
-</script>
-
+        // Atualiza o contador com um número aleatório entre 101 e 140 a cada 3 segundos
+        window.onload = function() {
+            setInterval(function() {
+                var novoNumero = numeroAleatorio(101, 140);
+                atualizarContador(novoNumero);
+            }, 3000); // 3000 milissegundos = 3 segundos
+        };
+    </script>
+    <style>
+        /* Estilização para o contador */
+        #contador {
+            color: red; /* Altera a cor do texto para vermelho */
+            font-size: 150%; /* Aumenta a fonte em 50% */
+        }
+    </style>
+</head>
+<body>
+    <!-- Elemento onde o contador será exibido -->
+    <p id="contador"></p>
   
 <div class="esconder">
 
@@ -761,6 +753,7 @@ src="https://www.facebook.com/tr?id=1318521726735498&ev=PageView&noscript=1"
   
 </body>
 </html>
+
 
 
 
