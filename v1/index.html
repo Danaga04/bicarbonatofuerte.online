@@ -70,13 +70,44 @@
     
   </div>
 
+<style>
+  body {
+    background-color: #000; /* fundo preto opcional */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  #number {
+    font-family: 'Poppins', sans-serif;
+    color: #fff; /* branco */
+    font-size: 2em;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
 <span id="number"></span> people are watching this video now!
 
 <script>
-function add(){number+=Math.floor((Math.random()*6)+1);document.getElementById("number").innerHTML=number;setTimeout("add()",10000);}        
-function generate(){number=Math.floor(Math.random()*1143)+1578;document.getElementById("number").innerHTML=number;add();}
-generate();</script>
+let number;
 
+function add() {
+    number += Math.floor(Math.random() * 6) + 1;
+    document.getElementById("number").innerHTML = number;
+    setTimeout(add, 10000); // atualiza a cada 10 segundos
+}
+
+function generate() {
+    number = Math.floor(Math.random() * 1143) + 1578;
+    document.getElementById("number").innerHTML = number;
+    add();
+}
+
+generate();
+</script>
   
 <div class="esconder">
 
@@ -730,6 +761,7 @@ src="https://www.facebook.com/tr?id=1318521726735498&ev=PageView&noscript=1"
   
 </body>
 </html>
+
 
 
 
