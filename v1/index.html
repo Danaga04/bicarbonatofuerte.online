@@ -77,42 +77,6 @@
 
 
 
-<style>
-  body {
-    background-color: #000; /* fundo preto opcional */
-    margin: 20px; /* margem em todos os lados */
-  }
-  #number {
-    font-family: 'Poppins', sans-serif;
-    color: #fff; /* branco */
-    font-size: 1.2em; /* fonte menor */
-  }
-</style>
-</head>
-<body>
-
-<span id="number"></span> people are watching this video now!
-
-<script>
-let number;
-
-function add() {
-    number += Math.floor(Math.random() * 6) + 1;
-    document.getElementById("number").innerHTML = number;
-    setTimeout(add, 10000); // atualiza a cada 10 segundos
-}
-
-function generate() {
-    number = Math.floor(Math.random() * 1143) + 1578;
-    document.getElementById("number").innerHTML = number;
-    add();
-}
-
-generate();
-</script>
-
-
-
 
 
   
@@ -808,5 +772,6 @@ if (event.keyCode == 73) {return false;}
   
 </body>
 </html>
+
 
 
