@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicação Que Aproxima - Transforme Suas Relações</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path fill="rgba(255,255,255,0.1)" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path></svg>') repeat-x;
+            opacity: 0.3;
+            animation: wave 15s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { background-position: 0 0; }
+            100% { background-position: 1200px 0; }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 18px 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            background: #ffed4e;
+        }
+
+        .stats {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .stats-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .problems {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .problem-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .problem-item {
+            background: #fff;
+            padding: 30px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .problem-item:hover {
+            transform: translateX(10px);
+        }
+
+        .problem-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .benefits {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .modules {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .module-list {
+            display: grid;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .module-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: start;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .module-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: scale(1.02);
+        }
+
+        .module-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .module-content h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .testimonials {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5em;
+            color: #667eea;
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #333;
+            margin: 30px 0;
+        }
+
+        .price-detail {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .guarantee {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 30px auto;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .hero p {
+                font-size: 1.1em;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🗣️ Comunicação Que Aproxima</h1>
+            <p>Transforme suas conversas em pontes de conexão! Domine técnicas comprovadas de comunicação empática e clareza para fortalecer suas relações pessoais e profissionais.</p>
+            <button class="cta-button" onclick="scrollToCTA()">Quero Me Comunicar Melhor Agora!</button>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">70%</div>
+                <div class="stat-text">dos erros organizacionais são causados por falhas na comunicação</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">25%</div>
+                <div class="stat-text">de aumento na produtividade com comunicação clara</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">60%</div>
+                <div class="stat-text">dos conflitos são evitáveis com comunicação empática</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title">Você Se Identifica Com Esses Desafios?</h2>
+            <div class="problem-list">
+                <div class="problem-item">
+                    <div class="problem-icon">😔</div>
+                    <h3>Mal-entendidos Frequentes</h3>
+                    <p>Suas palavras são constantemente interpretadas de forma errada, gerando conflitos desnecessários e desgaste nas relações.</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">🚫</div>
+                    <h3>Dificuldade em Dar Feedbacks</h3>
+                    <p>Você evita conversas difíceis porque não sabe como expressar suas preocupações sem magoar ou afastar as pessoas.</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">🤐</div>
+                    <h3>Não se Sente Ouvido(a)</h3>
+                    <p>Por mais que fale, parece que ninguém realmente compreende o que você está tentando comunicar.</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">💥</div>
+                    <h3>Conflitos Constantes</h3>
+                    <p>Pequenas conversas se transformam em discussões acaloradas, prejudicando o clima no trabalho e em casa.</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">😰</div>
+                    <h3>Ansiedade ao Comunicar</h3>
+                    <p>Você sente medo ou insegurança ao expressar suas opiniões e necessidades em diferentes situações.</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">🔄</div>
+                    <h3>Retrabalho e Perda de Tempo</h3>
+                    <p>Instruções mal compreendidas levam a erros repetidos e desperdício de energia e recursos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Imagine Dominar a Arte da Comunicação Empática</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Clareza Total</h3>
+                    <p>Expresse suas ideias de forma direta e gentil, eliminando ambiguidades e mal-entendidos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Relações Fortalecidas</h3>
+                    <p>Construa conexões genuínas baseadas em confiança, respeito e compreensão mútua.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Menos Conflitos</h3>
+                    <p>Identifique e evite gatilhos de desentendimento antes que se transformem em problemas reais.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎭</div>
+                    <h3>Inteligência Emocional</h3>
+                    <p>Gerencie suas emoções e compreenda as dos outros durante conversas desafiadoras.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Produtividade Elevada</h3>
+                    <p>Reduza retrabalho e aumente a eficiência com comunicação precisa e eficaz.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💼</div>
+                    <h3>Crescimento Profissional</h3>
+                    <p>Destaque-se no ambiente de trabalho com habilidades de comunicação de alto nível.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="modules">
+        <div class="container">
+            <h2 class="section-title">O Que Você Vai Aprender</h2>
+            <div class="module-list">
+                <div class="module-item">
+                    <div class="module-number">1</div>
+                    <div class="module-content">
+                        <h3>A Base da Comunicação Empática</h3>
+                        <p>Aprenda a diferença entre ouvir e escutar ativamente. Domine técnicas de reformulação, espelhamento e validação emocional para criar conexões profundas.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">2</div>
+                    <div class="module-content">
+                        <h3>Expressando-se com Clareza</h3>
+                        <p>Descubra a arte de ser direto e gentil ao mesmo tempo. Técnicas práticas para eliminar ambiguidades e aumentar sua produtividade em 25%.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">3</div>
+                    <div class="module-content">
+                        <h3>Identificando Gatilhos de Conflito</h3>
+                        <p>Reconheça padrões negativos na comunicação e aprenda a evitá-los. Substitua acusações por expressões que promovem colaboração.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">4</div>
+                    <div class="module-content">
+                        <h3>Comunicação Não-Violenta (CNV)</h3>
+                        <p>Domine os 4 componentes da CNV: observação, sentimento, necessidade e pedido. Transforme feedbacks negativos em diálogos construtivos.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">5</div>
+                    <div class="module-content">
+                        <h3>Linguagem Corporal Eficaz</h3>
+                        <p>Entenda o que seu corpo está comunicando além das palavras. Ajuste sua postura, gestos e expressões para transmitir confiança e empatia.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">6</div>
+                    <div class="module-content">
+                        <h3>Aplicação Prática</h3>
+                        <p>Estudos de caso reais, simulações de situações desafiadoras e exercícios práticos para consolidar todas as técnicas aprendidas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">O Que Nossos Alunos Estão Dizendo</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Depois deste treinamento, minha equipe começou a trabalhar de forma muito mais harmoniosa. Os conflitos diminuíram drasticamente e a produtividade aumentou!"</p>
+                    <p class="testimonial-author">— Ana Paula, Gerente de Projetos</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Aprendi a dar feedbacks sem medo. Agora consigo expressar minhas preocupações de forma clara e respeitosa, sem causar mal-estar na equipe."</p>
+                    <p class="testimonial-author">— Carlos Eduardo, Líder de Equipe</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As técnicas de escuta ativa transformaram meus relacionamentos pessoais. Finalmente me sinto verdadeiramente conectada com as pessoas ao meu redor."</p>
+                    <p class="testimonial-author">— Mariana Silva, Psicóloga</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <h2>Pronto Para Transformar Sua Comunicação?</h2>
+            <p style="font-size: 1.3em; margin-bottom: 20px;">Acesso completo ao treinamento + Certificado de conclusão</p>
+            <div class="price">R$ 497,00</div>
+            <p class="price-detail">ou 12x de R$ 49,90 no cartão</p>
+            <button class="cta-button">Garantir Minha Vaga Agora!</button>
+            <div class="guarantee">
+                <h3 style="color: #667eea; margin-bottom: 15px;">✅ Garantia de 7 Dias</h3>
+                <p>Se você não ficar satisfeito com o conteúdo, devolvemos 100% do seu investimento. Sem perguntas, sem complicações.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Comunicação Que Aproxima. Todos os direitos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Transforme suas conversas, transforme sua vida.</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToCTA() {
+            document.getElementById('cta').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Funcionalidade de compra seria integrada aqui com sua plataforma de pagamentos!');
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.problem-item, .benefit-card, .module-item, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
