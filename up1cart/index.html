@@ -1,573 +1,566 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oferta Especial - Duramax</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background: #000;
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #fff;
-      line-height: 1.4;
-      text-align: center;
-    }
-    .header {
-      background: linear-gradient(90deg, #d80000, #7a0000);
-      color: #fff;
-      text-align: center;
-      padding: 20px 10px;
-    }
-    .header span {
-      background: #fff;
-      color: #d80000;
-      font-weight: 800;
-      font-size: 22px;
-      padding: 5px 10px;
-      display: inline-block;
-    }
-    .header p {
-      margin-top: 10px;
-      font-size: 16px;
-      font-style: italic;
-    }
-    .step {
-      text-align: center;
-      font-size: 18px;
-      font-weight: 700;
-      margin: 20px 0 10px;
-    }
-    .progress {
-      width: 90%;
-      margin: 0 auto;
-      height: 30px;
-      border: 1px solid #fff; /* Alterado para branco para contraste em fundo preto */
-      border-radius: 5px;
-      overflow: hidden;
-    }
-    .progress-bar {
-      width: 75%;
-      height: 100%;
-      background: linear-gradient(90deg, #16a34a, #0d6b3a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 700;
-    }
-    .warning {
-      font-size: 14px;
-      margin: 10px 0;
-      text-align: center;
-    }
-    .warning span {
-      color: #ffcc00;
-      font-size: 18px;
-    }
-    .banner {
-      background: linear-gradient(90deg, #c51b1b, #6b0000);
-      color: #fff;
-      text-align: center;
-      padding: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin: 15px auto;
-      width: 90%;
-      border-radius: 5px;
-    }
-    /* Estilos para o player VSL */
-    .vsl-container {
-      margin: 20px auto;
-      width: 100%;
-      max-width: 600px; /* Ajuste o max-width conforme necessário */
-    }
-    .vsl-container vturb-smartplayer {
-      display: block;
-      width: 100%;
-      height: auto; /* Para manter a proporção em mobiles */
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DURAMAX - Protocolo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.4;
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+    .text-block {
+      padding: 20px 15px;
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .highlight {
+      background: linear-gradient(90deg, #d80000, #7a0000);
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-align: center;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    .protocol-box {
+      background: linear-gradient(180deg, #c51b1b, #6b0000);
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 650px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    .protocol-box h2 {
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .protocol-box p {
+      margin: 14px 0;
+      font-size: 15px;
+    }
+    .protocol-box .check {
+      color: #00ff5a;
+      font-weight: bold;
+      margin-right: 6px;
+    }
+    /* preço imagem */
+    .price {
+      margin: 30px 0;
+    }
+    /* hotmart form container */
+    #hotmart-sales-funnel {
+      margin: 20px auto;
+      max-width: 650px;
+    }
+    .header {
+      background: linear-gradient(90deg, #d80000, #7a0000);
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+    }
+    .header span {
+      background: #fff;
+      color: #d80000;
+      font-weight: 800;
+      font-size: 22px;
+      padding: 5px 10px;
+      display: inline-block;
+    }
+    .header p {
+      margin-top: 10px;
+      font-size: 16px;
+      font-style: italic;
+    }
+    .step {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 20px 0 10px;
+    }
+    .progress {
+      width: 90%;
+      margin: 0 auto;
+      height: 30px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      width: 75%;
+      height: 100%;
+      background: linear-gradient(90deg, #16a34a, #0d6b3a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+    }
+    .warning {
+      font-size: 14px;
+      margin: 10px 0;
+      text-align: center;
+    }
+    .warning span {
+      color: #ffcc00;
+      font-size: 18px;
+    }
+    .banner {
+      background: linear-gradient(90deg, #c51b1b, #6b0000);
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 15px auto;
+      width: 90%;
+      border-radius: 5px;
+    }
+    .content {
+      padding: 0 20px 30px;
+      font-size: 15px;
+    }
+    .content p {
+      margin: 12px 0;
+    }
+    .content strong {
+      font-weight: 700;
+    }
+    .pulse-button {
+      display:inline-block;
+      padding: 14px 28px;
+      margin: 20px; /* margem ao redor do botão */
+      background-color:#28a745;
+      color:#fff;
+      font-size:18px;
+      font-weight:bold;
+      text-decoration:none;
+      border-radius:8px;
+      text-align:center;
+      animation: pulse 1.5s infinite;
+    }
 
-    .pulse-button {
-      display:inline-block;
-      padding: 14px 28px;
-      margin: 20px auto;
-      background-color:#28a745;
-      color:#fff;
-      font-size:18px;
-      font-weight:bold;
-      text-decoration:none;
-      border-radius:8px;
-      text-align:center;
-      animation: pulse 1.5s infinite;
-      max-width: 90%; /* Responsivo */
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
-    }
-
-    .price img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-    }
-
-    /* Estilos dos comentários */
-    .comments-section {
-      background-color: #f0f2f5; /* Fundo branco para os comentários */
-      padding: 20px 15px;
-      color: #000; /* Texto preto para os comentários */
-      text-align: left;
-    }
-    .fb-comments-header span {
-      font-weight: bold;
-      font-size: 16px;
-      margin-bottom: 15px;
-      display: block;
-    }
-    .fb-comments-comment {
-      width: 100%;
-      margin-bottom: 20px;
-      border-collapse: collapse;
-    }
-    .fb-comments-comment-img {
-      width: 40px;
-      vertical-align: top;
-      padding-right: 10px;
-    }
-    .fb-comments-comment-img img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    .fb-comments-comment-name {
-      font-weight: bold;
-      color: #365899;
-      font-size: 14px;
-    }
-    .fb-comments-comment-text {
-      font-size: 14px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
-    .fb-comments-comment-actions {
-      font-size: 12px;
-      color: #616770;
-    }
-    .fb-comments-comment-actions like,
-    .fb-comments-comment-actions reply {
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .fb-comments-loadmore {
-      background-color: #f0f2f5;
-      border: 1px solid #ddd;
-      padding: 10px 15px;
-      border-radius: 5px;
-      display: block;
-      width: fit-content;
-      margin: 20px auto 0 auto;
-      cursor: pointer;
-      color: #365899;
-      font-weight: bold;
-    }
-  </style>
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="header">
-    <span>IMPORTANTE:</span>
-    <p>Salir o cerrar esta página puede provocar errores en tu compra.</p>
-  </div>
+  <!-- Header -->
+  <div class="header">
+    <span>IMPORTANTE:</span>
+    <p>Salir o cerrar esta página puede provocar errores en tu compra.</p>
+  </div>
 
-    <div class="step">PASO 3 DE 4</div>
+  <!-- Step -->
+  <div class="step">PASO 3 DE 4</div>
 
-    <div class="progress">
-    <div class="progress-bar">75%</div>
-  </div>
+  <!-- Progress -->
+  <div class="progress">
+    <div class="progress-bar">75%</div>
+  </div>
 
-    <div class="warning">
-    <span>⚠</span> Tu orden aún no está completa
-  </div>
+  <!-- Warning -->
+  <div class="warning">
+    <span>⚠</span> Tu orden aún no está completa
+  </div>
 
-    <div class="banner">
-    TU ACCESO A TRUCO DEL BICARBONATO SE ESTÁ CREANDO...
-  </div>
+  <!-- Banner -->
+  <div class="banner">
+    TU ACCESO A TRUCO DEL BICARBONATO SE ESTÁ CREANDO...
+  </div>
 
-    <div class="vsl-container">
-    <vturb-smartplayer id="vid-68ded47caed7e817f0e52d79" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
-    <script type="text/javascript">
-      var s=document.createElement("script");
-      s.src="https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/68ded47caed7e817f0e52d79/v4/player.js",
-      s.async=!0,document.head.appendChild(s);
-    </script>
-  </div>
+<vturb-smartplayer id="vid-68ded47caed7e817f0e52d79" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/80d0b89d-7901-4c62-bf15-807e2dab2483/players/68ded47caed7e817f0e52d79/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
 
-    <div style="text-align:center; margin:20px 0;">
-    <a href="https://go.centerpag.com/PPU38CQ1FSB?upsell=true" class="pulse-button">
-      ACELERAR 10x
-    </a>
-  </div>
+<div style="text-align:center; margin:20px 0; font-family: Arial, sans-serif;">
 
-    <div class="price">
-    
-  </div>
+<a href="https://go.centerpag.com/PPU38CQ1FSB?upsell=true" class="pulse-button">
+   ACELERAR 10x
+</a>
 
-    <div class="comments-section">
-    <section class="comments py-4">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script>
-        $.get("https://ipinfo.io/json", function (response) {
-          $("#address").html(response.city);
-        }, "jsonp");
-      </script>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="fb-comments" style="margin-top: 5px;">
-              <div class="fb-comments-header">
-                <span>21 de 23.834 comentarios</span>
-              </div>
-              <div class="fb-comments-wrapper" id="2">
-                <table class="fb-comments-comment">
-                  <tbody>
-                    <tr>
-                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/Zq5MHX4g/h1.jpg"></td>
-                      <td>
-                        <font class="fb-comments-comment-name">
-                          <name>Juan Pérez</name>
-                        </font>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">¡El Protocolo Duramax cambió mi vida! Combinado con el truco del bicarbonato, ahora duro más de una hora y mi esposa está asombrada. ¡Increíble la confianza que me ha dado!</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>8</likes>
-                        <date>4 min</date>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="fb-comments-wrapper" id="3">
-                <table class="fb-comments-comment">
-                  <tbody>
-                    <tr>
-                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/CKr6QJKK/h2.jpg"></td>
-                      <td>
-                        <font class="fb-comments-comment-name">
-                          <name>Carlos Ramírez</name>
-                        </font>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">Aquí en <span id="address" style="color:#000000;">Argentina</span> el Duramax y el truco del bicarbonato son la combinación perfecta. Mi rendimiento sexual se disparó, me siento imparable.</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>9</likes>
-                        <date>5 min</date>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="fb-comments-wrapper" id="4">
-                <table class="fb-comments-comment">
-                  <tbody>
-                    <tr>
-                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/qRtZVntx/h3.jpg"></td>
-                      <td>
-                        <font class="fb-comments-comment-name">
-                          <name>Andrés Morales</name>
-                        </font>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">¡El Protocolo Duramax es oro puro! Me ayudó a superar mis miedos y con el truco del bicarbonato, ahora tengo erecciones más firmes y duraderas. ¡Totalmente recomendado para la disfunción eréctil!</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>11</likes>
-                        <date>12 min</date>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="fb-comments-wrapper" id="5">
-                <table class="fb-comments-comment">
-                  <tbody>
-                    <tr>
-                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/d1zNq1rP/h4.jpg"></td>
-                      <td>
-                        <font class="fb-comments-comment-name">
-                          <name>Carlos Castro</name>
-                        </font>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">Llevo 17 días aplicando el Protocolo Duramax y el truco del bicarbonato, y ¡los resultados son sorprendentes! Mi resistencia es increíble, mi pareja está feliz y yo me siento un semental.</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>15</likes>
-                        <date>19 min</date>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="fb-comments-wrapper" id="6">
-                <table class="fb-comments-comment">
-                  <tbody>
-                    <tr>
-                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/J4CYvsRj/h5.jpg"></td>
-                      <td>
-                        <font class="fb-comments-comment-name">
-                          <name>Ricardo Díaz</name>
-                        </font>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">El Duramax es el complemento perfecto para el truco del bicarbonato. Juntos, me han dado la capacidad de complacer a mi mujer como nunca. ¡Felicidades por este sistema!</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>17</likes>
-                        <date>24 min</date>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="fb-comments-wrapper" id="7">
-                <table class="fb-comments-comment">
-                  <tbody>
-                    <tr>
-                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/Z5VfWjpL/h6.jpg"></td>
-                      <td>
-                        <font class="fb-comments-comment-name">
-                          <name>Diego Torres</name>
-                        </font>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">Sufro de eyaculación precoz y el Protocolo Duramax, junto con el truco del bicarbonato, ha sido la solución. ¡Ahora puedo durar 30 minutos sin problema y con más de una erección! Mi confianza está por las nubes.</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>18</likes>
-                        <date>26 min</date>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="fb-comments-wrapper" id="9">
-                <table class="fb-comments-comment">
-                  <tbody>
-                    <tr>
-                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/jj2MPNhY/h7.jpg"></td>
-                      <td>
-                        <font class="fb-comments-comment-name">
-                          <name>Luis Fernández</name>
-                        </font>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">Nunca pensé que el Duramax junto con el truco del bicarbonato me daría esta potencia. Mis erecciones son mejores, más controladas, y mi vida sexual está en otro nivel.</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>22</likes>
-                        <date>39 min</date>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <button class="fb-comments-loadmore" onclick="javascript:loadMore();">Ver mais comentários</button>
-              <div style="display:none" id="more">
-                <div class="fb-comments-wrapper">
-                  <table class="fb-comments-comment" id="10">
-                    <tbody>
-                      <tr>
-                        <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/W4yXn39F/h8.jpg"></td>
-                        <td>
-                          <font class="fb-comments-comment-name">
-                            <name>Lucas Martínez</name>
-                          </font>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">El Protocolo Duramax es un cambio de juego. Con el truco del bicarbonato, ahora siento que puedo durar lo que quiera. Mi pareja está fascinada y yo me siento un verdadero "macho alfa".</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>41</likes>
-                        <date>1 h</date>
-                    </tr>
-                  </tbody>
-                </table>
-                </div>
-                <div class="fb-comments-wrapper" id="11">
-                  <table class="fb-comments-comment">
-                    <tbody>
-                      <tr>
-                        <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/qvMwHnS6/m7.jpg"></td>
-                        <td>
-                          <font class="fb-comments-comment-name">
-                            <name>Gabriel Torres</name>
-                          </font>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">¡Absolutamente genial! El Duramax me ha permitido experimentar sesiones de amor legendarias, y todo gracias a la combinación con el truco del bicarbonato.</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>40</likes>
-                        <date>1 h</date>
-                    </tr>
-                  </tbody>
-                </table>
-                </div>
-                <div class="fb-comments-wrapper" id="12">
-                  <table class="fb-comments-comment">
-                    <tbody>
-                      <tr>
-                        <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/7L5Nf4xx/thispersondoesnotexist.jpg"></td>
-                        <td>
-                          <font class="fb-comments-comment-name">
-                            <name>André López</name>
-                          </font>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">Llevaba meses sin notar mejoras y este truco del bicarbonato, potenciado con el Duramax, me dio resultados en una semana. ¡Increíble la resistencia que he ganado!</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>47</likes>
-                        <date>1 h</date>
-                    </tr>
-                  </tbody>
-                </table>
-                </div>
-                <div class="fb-comments-wrapper" id="13">
-                  <table class="fb-comments-comment">
-                    <tbody>
-                      <tr>
-                        <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/yd9XyTgt/m9.jpg"></td>
-                        <td>
-                          <font class="fb-comments-comment-name">
-                            <name>Fernando Ruiz</name>
-                          </font>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">¿El Duramax realmente potencia el truco del bicarbonato a ese nivel? Necesito saber si es tan efectivo como dicen.</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>50</likes>
-                        <date>1 h</date>
-                    </tr>
-                  </tbody>
-                </table>
-                </div>
-                <div class="fb-comments-wrapper">
-                  <table class="fb-comments-comment" id="14">
-                    <tbody>
-                      <tr>
-                        <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/d3j2zt99/thispersondoesnotexist.jpg"></td>
-                        <td>
-                          <font class="fb-comments-comment-name">
-                            <name>Márcio Rojas</name>
-                          </font>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-text">@FernandoRuiz - ¡Absolutamente sí! Me sentía inseguro, pero el Duramax combinado con el bicarbonato me dio la "limpieza mental" y las técnicas para durar más. ¡Ahora me siento más seguro y mi pareja está encantada!</td>
-                    </tr>
-                    <tr>
-                      <td class="fb-comments-comment-actions">
-                        <like>Curtir</like>
-                        ·
-                        <reply>Responder</reply>
-                        ·
-                        <likes>66</likes>
-                        <date>1 h</date>
-                    </tr>
-                  </tbody>
-                </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+</div>
 
-  <script>
-    function loadMore() {
-      document.getElementById('more').style.display = 'block';
-      document.querySelector('.fb-comments-loadmore').style.display = 'none';
-    }
-  </script>
-  <script
-    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-    data-utmify-prevent-xcod-sck
-    data-utmify-prevent-subids
-    async
-    defer
-  ></script>
+  <!-- Preço -->
+  <div class="price">
+    <img src="https://i.postimg.cc/pd80M3b8/Duramax-09-13-2025-03-20-PM.png" alt="Precio Duramax">
+  </div>
 
-  
+  <!-- Comments Section with White Background -->
+  <div style="background-color: white; padding: 20px 0;">
+    <section class="comments py-4">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+        $.get("https://ipinfo.io/json", function (response) {
+          $("#address").html(response.city);
+        }, "jsonp");
+      </script>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="fb-comments" style="margin-top: 5px;">
+              <div class="fb-comments-header">
+                <span>21 de 23.834 comentarios</span>
+              </div>
+              <div class="fb-comments-wrapper" id="2">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/Zq5MHX4g/h1.jpg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Juan Pérez</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">¡Increíble! Combiné el Truco del Bicarbonato con el Protocolo Duramax y ahora duro más de una hora sin problemas. La desintoxicación sexual eliminó mis inseguridades y la Técnica del Retraso Eyaculatorio es mágica. Mi pareja está impresionada y nuestra relación ha mejorado muchísimo.</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>8</likes>
+                        <date>4 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="3">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/CKr6QJKK/h2.jpg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Carlos Ramírez</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Aquí en <span id="address" style="color:#000000;">Argentina</span> todos hablan de cómo el Truco del Bicarbonato potenciado con Duramax cambia vidas. Después de la limpieza mental, resolví mi eyaculación precoz en un 89% como promete, y ahora controlo todo. ¡Confianza al máximo!</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>9</likes>
+                        <date>5 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="4">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/qRtZVntx/h3.jpg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Andrés Morales</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">El Protocolo Duramax junto al Truco del Bicarbonato es lo mejor que he probado. La Técnica del Buen Sexo hace que mi pareja me ruegue por más, y dura horas sin cansarme. Blindado contra traiciones, como dice Isabella. ¡Resultados reales en días!</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>11</likes>
+                        <date>12 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="5">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/d1zNq1rP/h4.jpg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Carlos Castro</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Llevo 17 días con el Truco del Bicarbonato y Duramax, y ahora tengo resistencia como un toro. La sensibilidad del glande bajó drásticamente, y puedo ir 2-3 rondas seguidas. Mi energía y confianza están en otro nivel, ¡ella me mira diferente!</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>15</likes>
+                        <date>19 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="6">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/J4CYvsRj/h5.jpg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Ricardo Díaz</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Duramax eleva el Truco del Bicarbonato a un nivel legendario. Con la técnica para terminar sesiones, mis encuentros son inolvidables. Duro lo que quiero, sin eyacular pronto, y ella se siente más atraída por la oxitocina. ¡Vale cada centavo!</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>17</likes>
+                        <date>24 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="7">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/Z5VfWjpL/h6.jpg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Diego Torres</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Sufría de eyaculación precoz, pero con el Truco del Bicarbonato y Duramax, la desintoxicación sexual me liberó de traumas. Ahora duro 12 veces más, controlo la excitación y mi pareja tiene orgasmos múltiples. ¡Soy un hombre alfa gracias a esto!</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>18</likes>
+                        <date>26 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="9">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/jj2MPNhY/h7.jpg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Luis Fernández</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Nunca imaginé que combinar el Truco del Bicarbonato con Duramax me diera tanta potencia. Las video clases paso a paso son claras, y ahora tengo sexo intenso sin cansarme. Mi confianza está en el podio, ¡ella no se cansa de mí!</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>22</likes>
+                        <date>39 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button class="fb-comments-loadmore" onclick="javascript:loadMore();">Ver mais comentários</button>
+              <div style="display:none" id="more">
+                <div class="fb-comments-wrapper">
+                  <table class="fb-comments-comment" id="10">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/W4yXn39F/h8.jpg"></td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Lucas Martínez</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">El Truco del Bicarbonato solo era el inicio; con Duramax, la Técnica del Retraso me dio resistencia sorprendente. Duro horas, controlo todo y mi pareja libera oxitocina como loca. ¡Resultados garantizados, como promete la garantía de 180 días!</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Curtir</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>41</likes>
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="fb-comments-wrapper" id="11">
+                  <table class="fb-comments-comment">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/qvMwHnS6/m7.jpg"></td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Gabriel Torres</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">Duramax con el Truco del Bicarbonato me transformó en un semental. La limpieza mental borró miedos, y ahora tengo sexo legendario. ¡Ella me ruega por más, y mi energía es indescriptible!</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Curtir</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>40</likes>
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="fb-comments-wrapper" id="12">
+                  <table class="fb-comments-comment">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/7L5Nf4xx/thispersondoesnotexist.jpg"></td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>André López</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">Llevaba meses estancado, pero Duramax potenció el Truco del Bicarbonato. Ahora duro 2-3 horas, controlo la eyaculación y ella tiene orgasmos múltiples. ¡Confianza total, gracias a las técnicas!</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Curtir</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>47</likes>
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="fb-comments-wrapper" id="13">
+                  <table class="fb-comments-comment">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/yd9XyTgt/m9.jpg"></td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Fernando Ruiz</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">¿En verdad este protocolo con el bicarbonato funciona? ¡Sí, y cómo!</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Curtir</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>50</likes>
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="fb-comments-wrapper">
+                  <table class="fb-comments-comment" id="14">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img src="https://i.postimg.cc/d3j2zt99/thispersondoesnotexist.jpg"></td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Márcio Rojas</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">@FernandoRuiz - Sí, combinado con el Truco del Bicarbonato, Duramax me dio resultados en una semana. Ahora soy imparable en la cama, con resistencia y placer intensos. ¡No dudes, actúa ahora!</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Curtir</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>66</likes>
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+
 </body>
 </html>
